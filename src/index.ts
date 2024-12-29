@@ -6,7 +6,7 @@ import MyUserRoute from "./routes/MyUserRoute"
 const app=express();
 app.use(express.json())
 app.use(cors())
-mongoose.connect(process.env.MONGODB_CONNEXTION_STRING as string).then(()=>{
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string).then(()=>{
     console.log("Connected to database ")
 })
 
