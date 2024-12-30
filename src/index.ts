@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 import MyUserRoute from "./routes/MyUserRoute"
 import {v2 as cloudinary} from "cloudinary"
 import MyRestaurantRoute from "./routes/MyRestaurantRoute"
-
+import restaurantRoute from "./routes/RestaurantRoute"
 
 const app=express();
 app.use(express.json())
@@ -25,6 +25,8 @@ app.get("/health", async (req:Request, res: Response)=>{
 })
 app.use('/api/my/user', MyUserRoute)
 app.use('/api/my/restaurant', MyRestaurantRoute)
+app.use("/api/restaurant" , restaurantRoute )
+
 app.listen(7000,()=>{ 
     console.log("Server started on localhost:7000")
 })
