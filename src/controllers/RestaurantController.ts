@@ -6,7 +6,7 @@ const getRestaurant = async (req: Request, res: Response) :Promise<any>=> {
     const restaurantId = req.params.restaurantId;
 
     const restaurant = await Restaurant.findById(restaurantId);
-    if (!restaurant) {
+    if (!restaurant) { 
       return res.status(404).json({ message: "restaurant not found" });
     }
 
@@ -56,7 +56,7 @@ const searchRestaurant = async (req: Request, res: Response):Promise<any> => {
         { cuisines: { $in: [searchRegex] } },
       ]; 
     }
-
+ 
     const pageSize = 10;
     const skip = (page - 1) * pageSize;
 
